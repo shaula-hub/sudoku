@@ -153,7 +153,7 @@ function SettingsModal({ onClose, currentDifficulty }) {
                   style={{
                     color: currentDifficultyInfo.color,
                     fontWeight: "bold",
-                    fontSize: "1.65rem",
+                    fontSize: "1.7rem",
                   }}
                 >
                   {currentDifficultyInfo.label}
