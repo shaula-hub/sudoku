@@ -150,7 +150,11 @@ function SettingsModal({ onClose, currentDifficulty }) {
               <div className="difficulty-info">
                 <span
                   className="difficulty-level"
-                  style={{ color: currentDifficultyInfo.color }}
+                  style={{
+                    color: currentDifficultyInfo.color,
+                    fontWeight: "bold",
+                    fontSize: "1.65rem",
+                  }}
                 >
                   {currentDifficultyInfo.label}
                 </span>

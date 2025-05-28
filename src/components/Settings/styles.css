@@ -33,6 +33,7 @@
 .modal-header h2 {
   margin: 0;
   font-size: 1.65rem;
+  font-weight: bold;
 }
 
 .close-button {
@@ -77,8 +78,8 @@
 
 .difficulty-level {
   font-weight: bold;
-  font-size: 0.825rem; /* Half of 1.65rem */
-  color: black !important;
+  font-size: 1.65rem; /* Half of 1.65rem */
+  /* color: var(--current-difficulty-color, black); */
 }
 
 .cells-info {
