@@ -7,7 +7,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 40px;
+    /* margin-top: 40px; */
     margin-bottom: 30px;
     padding-top: 20px;
   }
@@ -30,7 +30,7 @@
 }
 
 .clear-button {
-  width: 100%;
+  /* width: 100%; */
   margin-top: 5px;
   height: 40px;
   font-size: 16px;
