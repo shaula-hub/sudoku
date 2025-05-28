@@ -10,6 +10,6 @@
     flex-direction: column;
     align-items: center;
     margin-top: 30px; /* Increased from 15px */
-    margin-bottom: 20px; /* Added bottom margin */
+    /* margin-bottom: 20px; Added bottom margin */
   }
 }
