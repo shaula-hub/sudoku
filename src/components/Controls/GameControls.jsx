@@ -34,7 +34,7 @@ function GameControls({ difficultyColor, isMobile }) {
           borderColor: difficultyColor,
           ...(isMobile
             ? {
-                fontSize: "2.5rem",
+                fontSize: "1.25rem",
                 fontWeight: "bold",
                 color: "white",
                 padding: "8px 12px",
