@@ -11,7 +11,7 @@ export const DIFFICULTY_COLORS = {
 
 export const DIFFICULTY_RANGES = {
   child: { min: 5, max: 19, label: "Детсад" },
-  beginner: { min: 20, max: 29, label: "Начинающий" },
+  beginner: { min: 20, max: 29, label: "Ученик" },
   easy: { min: 30, max: 39, label: "Халявщик" },
   medium: { min: 40, max: 49, label: "Середняк" },
   hard: { min: 50, max: 56, label: "Профи" },

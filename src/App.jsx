@@ -51,11 +51,15 @@ function GameInitializer() {
 function AppContent() {
   const { state } = useGame();
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 767);
 
-  // Use centralized color function
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 767);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const currentDifficultyColor = getDifficultyColor(state.difficulty);
-
-  // Get current difficulty level name
   const getCurrentDifficultyName = () => {
     const range = getDifficultyRange(state.difficulty);
     return range ? range.label : "Beginner";
@@ -67,7 +71,21 @@ function AppContent() {
         className="title-bar"
         style={{ backgroundColor: currentDifficultyColor }}
       >
-        <h1 className="game-title">
+        <h1
+          className="game-title"
+          style={
+            isMobile
+              ? {
+                  fontSize: "1rem" /* Like new-game-button */,
+                  fontWeight: "bold",
+                  padding: "12px 20px",
+                  border: `2px solid ${currentDifficultyColor}`,
+                  borderRadius: "6px",
+                  backgroundColor: currentDifficultyColor,
+                }
+              : {}
+          }
+        >
           <span className="title-main">Sudoku</span>
           <span className="title-separator">:</span>
           <span className="level-text">{getCurrentDifficultyName()}</span>
@@ -96,7 +114,10 @@ function AppContent() {
       </div>
 
       <GameInitializer />
-      <GameControls difficultyColor={currentDifficultyColor} />
+      <GameControls
+        difficultyColor={currentDifficultyColor}
+        isMobile={isMobile}
+      />
       <Board />
       <NumberPad />
 

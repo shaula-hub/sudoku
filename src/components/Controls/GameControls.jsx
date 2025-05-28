@@ -1,13 +1,12 @@
-// Update src/components/Controls/GameControls.jsx
+// src/components/Controls/GameControls.jsx
 import React from "react";
 import { useGame } from "../../context/GameContext";
 import "./styles.css";
 
-function GameControls({ difficultyColor }) {
+function GameControls({ difficultyColor, isMobile }) {
   const { dispatch, state } = useGame();
 
   const handleNewGame = () => {
-    // Get current settings from localStorage to maintain consistency
     const savedSettings = localStorage.getItem("sudokuSettings");
     let difficulty = state.difficulty || "beginner";
     let cellsToRemove = null;
@@ -18,7 +17,6 @@ function GameControls({ difficultyColor }) {
       cellsToRemove = parsedSettings.cellsToRemove;
     }
 
-    // Use current difficulty and settings, not defaults
     dispatch({
       type: "NEW_GAME",
       difficulty,
@@ -32,9 +30,18 @@ function GameControls({ difficultyColor }) {
         className="new-game-button"
         onClick={handleNewGame}
         style={{
-          fontSize: 24,
           backgroundColor: difficultyColor,
           borderColor: difficultyColor,
+          ...(isMobile
+            ? {
+                fontSize: "2.5rem",
+                fontWeight: "bold",
+                color: "white",
+                padding: "8px 12px",
+              }
+            : {
+                fontSize: "24px",
+              }),
         }}
       >
         Новая игра
