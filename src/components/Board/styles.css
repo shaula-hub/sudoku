@@ -1,0 +1,225 @@
+/* src/components/Board/styles.css */
+/* Update to src/components/Board/styles.css */
+.sudoku-board {
+  display: grid;
+  grid-template-rows: repeat(9, 1fr);
+  width: 100%;
+  max-width: 450px;
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
+  border: 2px solid #000;
+}
+
+.board-row {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+}
+
+.cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1 / 1;
+  font-size: 20px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+/* Thicker borders for 3x3 boxes */
+.cell:nth-child(3n) {
+  border-right: 2px solid #000;
+}
+
+.board-row:nth-child(3n) .cell {
+  border-bottom: 2px solid #000;
+}
+
+/* First cell of each row/column needs thicker border too */
+.board-row:first-child .cell {
+  border-top: 2px solid #000;
+}
+
+.cell:first-child {
+  border-left: 2px solid #000;
+}
+
+.given {
+  font-weight: bold;
+  color: #000;
+}
+
+.player {
+  font-weight: bold;
+  color: #f44336; /* Blue color for player numbers */
+}
+
+.selected {
+  background-color: #e3f2fd; /* Light blue background */
+  box-shadow: inset 0 0 0 2px #2196f3; /* Inner blue border */
+  position: relative; /* For the box-shadow positioning */
+}
+
+/* Add a pulsing animation for even better visibility */
+@keyframes pulse-highlight {
+  0% {
+    box-shadow: inset 0 0 0 2px #2196f3;
+  }
+  50% {
+    box-shadow: inset 0 0 0 3px #2196f3;
+  }
+  100% {
+    box-shadow: inset 0 0 0 2px #2196f3;
+  }
+}
+
+.selected {
+  animation: pulse-highlight 1.5s infinite;
+}
+
+.even-box {
+  background-color: #f9f9f9;
+}
+
+.odd-box {
+  background-color: #ffffff;
+}
+
+/* src/components/NumberPad/styles.css */
+.number-pad {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.number-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+}
+
+.number-button {
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.clear-button {
+  width: 100%;
+  margin-top: 5px;
+  height: 40px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f44336;
+  color: white;
+  cursor: pointer;
+}
+
+/* src/components/Controls/styles.css */
+.game-controls {
+  margin: 20px auto;
+  text-align: center;
+}
+
+.new-game-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.completion-message {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #dff0d8;
+  color: #3c763d;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+/* Hint styles */
+.hint-highlight {
+  background-color: rgba(
+    173,
+    216,
+    230,
+    0.5
+  ) !important; /* Light blue highlight */
+}
+
+.hint-tooltip {
+  position: absolute;
+  background-color: #333;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  z-index: 100;
+  font-size: 14px;
+  max-width: 200px;
+  pointer-events: none;
+}
+
+.hint-tooltip.candidates {
+  background-color: #4169e1;
+}
+
+.hint-tooltip::after {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 10px;
+  border-width: 0 5px 5px;
+  border-style: solid;
+  border-color: transparent transparent #333 transparent;
+}
+
+.hint-tooltip.candidates::after {
+  border-color: transparent transparent #4169e1 transparent;
+}
+
+.sudoku-board {
+  display: grid;
+  grid-template-rows: repeat(9, 1fr);
+  gap: 1px;
+  background-color: #333;
+  border: 2px solid #333;
+  width: 100%;
+  max-width: 350px;
+  aspect-ratio: 1;
+  margin: 0 auto 15px;
+}
+
+.cell {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 0;
+}
+
+/* Desktop styles */
+@media (min-width: 768px) {
+  .sudoku-board {
+    max-width: 450px;
+    margin-bottom: 20px;
+  }
+
+  .cell {
+    font-size: 1.5rem;
+  }
+}

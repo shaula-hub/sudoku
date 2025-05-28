@@ -1,0 +1,99 @@
+/* src/styles/animations.css */
+/* Cell animation */
+@keyframes solvedCellAnimation {
+  0% {
+    transform: scale(1);
+    background-color: white;
+  }
+  50% {
+    transform: scale(1.1);
+    background-color: #a7f3d0; /* Light green */
+  }
+  100% {
+    transform: scale(1);
+    background-color: white;
+  }
+}
+
+.solved-cell {
+  animation: solvedCellAnimation 0.5s ease-in-out;
+}
+
+/* Victory modal animations */
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Update in src/styles/animations.css */
+.victory-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0
+  ); /* Remove the dark background completely */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.5s ease-in-out;
+  pointer-events: none; /* This allows clicks to pass through the overlay background */
+}
+
+.victory-message {
+  background-color: rgba(255, 255, 255, 0.85); /* Semi-transparent white */
+  padding: 30px 50px;
+  border-radius: 10px;
+  text-align: center;
+  animation: slideInFromTop 0.5s ease-out;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  pointer-events: auto;
+}
+
+.victory-message h2 {
+  color: #2c3e50;
+  margin-bottom: 15px;
+  font-size: 28px;
+}
+
+.victory-message p {
+  color: #7f8c8d;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.victory-button {
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.victory-button:hover {
+  background-color: #2ecc71;
+}

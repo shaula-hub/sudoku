@@ -1,0 +1,14 @@
+/* Number pad visibility based on screen size */
+.number-pad {
+  display: none; /* Hidden by default */
+}
+
+/* Show on mobile screens only */
+@media (max-width: 768px) {
+  .number-pad {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+  }
+}
