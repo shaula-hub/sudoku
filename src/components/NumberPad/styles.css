@@ -1,4 +1,3 @@
-/* Number pad visibility based on screen size */
 .number-pad {
   display: none;
 }
@@ -12,4 +11,32 @@
     margin-bottom: 30px;
     padding-top: 20px;
   }
+}
+
+.number-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+}
+
+.number-button {
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.clear-button {
+  width: 100%;
+  margin-top: 5px;
+  height: 40px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f44336;
+  color: white;
+  cursor: pointer;
 }
