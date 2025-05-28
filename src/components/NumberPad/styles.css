@@ -7,9 +7,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* margin-top: 40px; */
+    margin-top: 5px;
     margin-bottom: 30px;
-    padding-top: 20px;
+    padding-top: 5px;
   }
 }
 
@@ -30,7 +30,7 @@
 }
 
 .clear-button {
-  /* width: 100%; */
+  width: 50%;
   margin-top: 5px;
   height: 40px;
   font-size: 16px;
