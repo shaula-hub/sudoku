@@ -76,7 +76,7 @@ function AppContent() {
           style={
             isMobile
               ? {
-                  fontSize: "1rem" /* Like new-game-button */,
+                  fontSize: "2rem" /* Like new-game-button */,
                   fontWeight: "bold",
                   padding: "12px 20px",
                   border: `2px solid ${currentDifficultyColor}`,
