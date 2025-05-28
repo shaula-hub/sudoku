@@ -1,15 +1,15 @@
 /* Number pad visibility based on screen size */
 .number-pad {
-  display: none; /* Hidden by default */
+  display: none;
 }
 
-/* Show on mobile screens only */
 @media (max-width: 768px) {
   .number-pad {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* margin-top: 60px; Increased from 15px */
-    /* margin-bottom: 40px; */
+    margin-top: 40px;
+    margin-bottom: 30px;
+    padding-top: 20px;
   }
 }
