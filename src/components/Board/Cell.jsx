@@ -202,7 +202,10 @@ function Cell({ value, isGiven, isSelected, row, col, isCompleted }) {
     if (candidates.length > 0) {
       const tooltip = document.createElement("div");
       tooltip.className = "hint-tooltip candidates";
-      tooltip.textContent = `Кандидат(ы): ${candidates.join(", ")}`;
+
+      // Split into two lines with empty row
+      tooltip.style.whiteSpace = "pre-line";
+      tooltip.textContent = `Кандидат(ы):\n\n${candidates.join(", ")}`;
 
       document.body.appendChild(tooltip);
 
