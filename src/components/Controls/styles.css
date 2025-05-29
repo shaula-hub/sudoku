@@ -56,7 +56,7 @@
 /* Desktop styles */
 @media (min-width: 768px) {
   .game-controls {
-    margin: 15px 0;
+    margin: 10px 0;
   }
 
   .new-game-button {
