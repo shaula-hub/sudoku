@@ -37,7 +37,7 @@ function GameControls({ difficultyColor, isMobile }) {
                 fontSize: "1.0rem",
                 fontWeight: "bold",
                 color: "white",
-                // padding: "8px 12px",
+                padding: "8px 12px",
               }
             : {
                 fontSize: "20px",

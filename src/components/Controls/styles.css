@@ -7,7 +7,7 @@
 }
 
 .new-game-button {
-  /* padding: 10px 10px; */
+  padding: 10px 10px;
   border: 2px solid;
   border-radius: 6px;
   background-color: #4169e1; /* Default fallback */
@@ -38,7 +38,7 @@
 .game-controls {
   display: flex;
   justify-content: center;
-  /* margin: 10px 0; */
+  margin: 10px 0;
 }
 
 .new-game-button {
@@ -60,7 +60,7 @@
   }
 
   .new-game-button {
-    /* padding: 10px 10px; */
+    padding: 10px 10px;
     font-size: 18px;
     min-width: 160px;
   }
