@@ -202,21 +202,27 @@ function Cell({ value, isGiven, isSelected, row, col, isCompleted }) {
     if (candidates.length > 0) {
       const tooltip = document.createElement("div");
       tooltip.className = "hint-tooltip candidates";
-
-      // Split into two lines with empty row
       tooltip.style.whiteSpace = "pre-line";
       tooltip.textContent = `Кандидат(ы):\n\n${candidates.join(", ")}`;
 
       document.body.appendChild(tooltip);
 
-      // Position near the cell
-      const cell = document.querySelector(
-        `.cell[data-row="${row}"][data-col="${col}"]`
-      );
-      if (cell) {
-        const rect = cell.getBoundingClientRect();
-        tooltip.style.left = `${rect.left + window.scrollX}px`;
-        tooltip.style.top = `${rect.bottom + window.scrollY + 5}px`;
+      // Center relative to sudoku board (both horizontally and vertically)
+      const board = document.querySelector(".sudoku-board");
+      if (board) {
+        const boardRect = board.getBoundingClientRect();
+        tooltip.style.left = `${
+          boardRect.left +
+          boardRect.width / 2 -
+          tooltip.offsetWidth / 2 +
+          window.scrollX
+        }px`;
+        tooltip.style.top = `${
+          boardRect.top +
+          boardRect.height / 2 -
+          tooltip.offsetHeight / 2 +
+          window.scrollY
+        }px`;
       }
 
       // Remove after 3 seconds
