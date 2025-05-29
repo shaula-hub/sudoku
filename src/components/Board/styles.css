@@ -8,7 +8,9 @@
   width: 100%;
   max-width: 350px;
   aspect-ratio: 1;
-  /* margin: 0 auto 40px; Increased bottom margin */
+  /* margin: 0 auto 20px; */
+  justify-self: center;
+  align-self: center;
 }
 
 .board-row {
